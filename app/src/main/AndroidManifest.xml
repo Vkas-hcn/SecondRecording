@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondRecording"
         tools:targetApi="31">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fpi"/>
         <activity
             android:name=".BootActivity"
             android:exported="true"

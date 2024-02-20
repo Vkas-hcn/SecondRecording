@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SecondRecording</string>
+    <string name="fpi" translatable="false">123</string>
 </resources>
