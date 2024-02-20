@@ -26,16 +26,16 @@ class PlayActivity : AppCompatActivity() {
             finish()
         }
         binding.tv05.setOnClickListener {
-            playMultipleTimes(5.0f)
+            playMultipleTimes(0.5f)
         }
         binding.tv1.setOnClickListener {
-            playMultipleTimes(10.0f)
+            playMultipleTimes(1.0f)
         }
         binding.tv2.setOnClickListener {
-            playMultipleTimes(15.0f)
+            playMultipleTimes(1.5f)
         }
         binding.tv3.setOnClickListener {
-            playMultipleTimes(20.0f)
+            playMultipleTimes(2.0f)
         }
         binding.aivPlayStop.setOnClickListener {
             resumeAudioFun()
@@ -98,9 +98,8 @@ class PlayActivity : AppCompatActivity() {
 
     private fun playMultipleTimes(num: Float) {
         playSpeedNum = num
-        val numInt = (num / 10)
         updateSpeedUI()
-        audioPlayer.changeSpeed(numInt)
+        audioPlayer.changeSpeed(playSpeedNum)
     }
 
     private val handler = Handler(Looper.getMainLooper())
@@ -125,7 +124,7 @@ class PlayActivity : AppCompatActivity() {
 
     private fun updateSpeedUI() {
         when (playSpeedNum) {
-            5.0f -> {
+            0.5f -> {
                 binding.tv05.setBackgroundResource(R.drawable.bg_rate)
                 binding.tv1.setBackgroundResource(R.drawable.bg_rate_2)
                 binding.tv2.setBackgroundResource(R.drawable.bg_rate_2)
@@ -135,7 +134,7 @@ class PlayActivity : AppCompatActivity() {
                 binding.tv2.setTextColor(resources.getColor(R.color.rate2))
                 binding.tv3.setTextColor(resources.getColor(R.color.rate2))
             }
-            10.0f -> {
+            1.0f -> {
                 binding.tv05.setBackgroundResource(R.drawable.bg_rate_2)
                 binding.tv1.setBackgroundResource(R.drawable.bg_rate)
                 binding.tv2.setBackgroundResource(R.drawable.bg_rate_2)
@@ -145,7 +144,7 @@ class PlayActivity : AppCompatActivity() {
                 binding.tv2.setTextColor(resources.getColor(R.color.rate2))
                 binding.tv3.setTextColor(resources.getColor(R.color.rate2))
             }
-            15.0f -> {
+            1.5f -> {
                 binding.tv05.setBackgroundResource(R.drawable.bg_rate_2)
                 binding.tv1.setBackgroundResource(R.drawable.bg_rate_2)
                 binding.tv2.setBackgroundResource(R.drawable.bg_rate)
@@ -155,7 +154,7 @@ class PlayActivity : AppCompatActivity() {
                 binding.tv2.setTextColor(resources.getColor(R.color.rate))
                 binding.tv3.setTextColor(resources.getColor(R.color.rate2))
             }
-            20.0f -> {
+            2.0f -> {
                 binding.tv05.setBackgroundResource(R.drawable.bg_rate_2)
                 binding.tv1.setBackgroundResource(R.drawable.bg_rate_2)
                 binding.tv2.setBackgroundResource(R.drawable.bg_rate_2)
