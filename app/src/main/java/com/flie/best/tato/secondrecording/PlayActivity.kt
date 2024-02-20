@@ -11,7 +11,7 @@ import java.text.DecimalFormat
 
 class PlayActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlayRecordBinding
-    private var playSpeedNum = 0.0f
+    private var playSpeedNum = 1.0f
     private lateinit var audioPlayer: AudioUtils
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,12 +41,12 @@ class PlayActivity : AppCompatActivity() {
             resumeAudioFun()
         }
     }
-    var fileName = ""
-    var fileTime: Long = 0
+    var autoName = ""
+    var autoTime: Long = 0
     var fileData: File? = null
     private fun playAudio() {
         fileData?.let { it1 ->
-            audioPlayer.playAudio(it1, (playSpeedNum / 10))
+            audioPlayer.playAudio(it1, (playSpeedNum))
             handler.post(updateSeekBar)
         }
         binding.aivPlayStop.setImageResource(R.drawable.icon_stop)
@@ -65,20 +65,20 @@ class PlayActivity : AppCompatActivity() {
 
     }
     private fun initData() {
-        fileName = intent.getStringExtra("fileName").toString()
-        fileTime = intent.getLongExtra("fileTime", 0)
+        autoName = intent.getStringExtra("autoName").toString()
+        autoTime = intent.getLongExtra("autoTime", 0)
         audioPlayer = AudioUtils()
-        if (fileName.isNotEmpty()) {
-            binding.textView.text = fileName
-            fileData = SjUtils.getFilePathByName(this,fileName)
-            playSpeedNum = 10.0f
+        if (autoName.isNotEmpty()) {
+            binding.textView.text = autoName
+            fileData = SjUtils.getFilePathByName(this,autoName)
+            playSpeedNum = 1.0f
             playAudio()
             initSeekBar()
         }
     }
 
     private fun initSeekBar() {
-        binding.progressBarRecord.max = (fileTime).toInt()
+        binding.progressBarRecord.max = (autoTime).toInt()
         binding.progressBarRecord.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {

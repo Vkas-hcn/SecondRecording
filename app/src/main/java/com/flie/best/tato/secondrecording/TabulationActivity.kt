@@ -94,8 +94,8 @@ class TabulationActivity : AppCompatActivity() {
 
     fun jumpToDetail(position: Int) {
         val intent = Intent(this, PlayActivity::class.java)
-        intent.putExtra("fileName", listData[position].name)
-        intent.putExtra("fileTime", listData[position].duration)
+        intent.putExtra("autoName", listData[position].name)
+        intent.putExtra("autoTime", listData[position].duration)
         startActivity(intent)
     }
 
