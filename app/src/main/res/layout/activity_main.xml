@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_main_t"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Record Master"
+            android:textColor="#FF0F280B"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/atv_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recording"
+            android:textColor="#64F01C"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="20dp"
+            android:drawableStart="@drawable/ic_record"
+            android:background="@drawable/bg_main_botton"
+            android:paddingVertical="28dp"
+            android:paddingHorizontal="85dp"
+            android:drawablePadding="7dp"
+            android:layout_marginTop="91dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/atv_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_main_botton"
+            android:drawableStart="@drawable/ic_file"
+            android:drawablePadding="7dp"
+            android:gravity="center"
+            android:paddingHorizontal="81dp"
+            android:paddingVertical="17dp"
+            android:text="List"
+            android:textColor="#64F01C"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="22dp"
+            app:layout_constraintStart_toStartOf="@+id/atv_record"
+            app:layout_constraintTop_toBottomOf="@+id/atv_record" />
+
+        <LinearLayout
+            android:id="@+id/ll_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_setting"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="21dp"
+            android:layout_marginStart="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/atv_list"
+            app:layout_constraintStart_toEndOf="@+id/atv_list"
+            app:layout_constraintTop_toTopOf="@+id/atv_list">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_setting" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_main_b"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
